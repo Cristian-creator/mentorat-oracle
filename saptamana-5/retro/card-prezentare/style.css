@@ -1,0 +1,40 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+body {
+    background-color: rgb(232, 237, 237);;
+}
+
+/* Presentation Card */
+.presentation-card-container {
+    background-color: #FFFFFF;
+    width: 300px;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    box-shadow: 4px 10px 21px -8px rgba(0,0,0,0.75);
+    overflow: hidden;
+}
+
+.presentation-card-image {
+    height: 250px;
+    background: url("https://placekitten.com/200/200");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.presentation-card-text {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.presentation-card-title {
+    font-size: 28px;
+}

@@ -1,0 +1,21 @@
+.page-title {
+    text-align: center;
+}
+
+.red-card {
+    background-color: red;
+    height: 200px;
+    width: 200px;
+
+    /* Atentie!! */
+    /* - ca sa functioneze centrarea trebuie sa existe spatiu disponibil pe latime */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* sau space-between */
+    gap: 36px;
+}

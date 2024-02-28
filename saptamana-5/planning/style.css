@@ -1,0 +1,57 @@
+* {
+   margin: 0px;
+   padding: 0px;
+   border: none;
+}
+
+/* .titlu-pagina este selector */
+.titlu-pagina {
+    color: red;
+}
+
+.customer-support-sub-section {
+    display: flex;
+    /* Atentie: urmatoarele proprietati pot fi folosite doar daca ai pus display: flex inainte */
+    gap: 30px;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+/* Cards Section */
+
+.cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 16px;
+    column-gap: 16px;
+}
+
+.card {
+    height: 200px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-1 {
+    background-color: red;
+}
+.card-2 {
+    background-color: blue;
+}
+.card-3 {
+    background-color: green;
+}
+.card-4 {
+    background-color: yellow;
+}
+.card-5 {
+    background-color: pink;
+}
+.card-6 {
+    background-color: black;
+}
+
+.card-7 {
+    background-color: aqua;
+}

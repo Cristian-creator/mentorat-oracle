@@ -1,0 +1,22 @@
+CUM INCARC O TEMA IN GITHUB?
+
+Pasul 1) Rezolva tema
+
+Pasul 2) Intra in GitHub si creeaza un repository
+
+Pasul 3) Intoarce-te in VS Code si urmeaza pasii de mai jos:
+- deschide VS Code in folderul pe care vrei sa il incarci
+- deschide terminalul
+- executa "git init" ( comanda asta initializeaza git-ul in folderul curent )
+- executa "git add ." ( comanda asta "git add" ii va spune git-ului ce vrem sa incarcam in GitHub, daca punem un spatiu si un punct o sa selecteze toate fisierele si folderele din folderul curent )
+- executa "git commit -m 'mesaj'" ( comanda asta trebuie executata mereu dupa git add, iar comanda 'git commit' va grupa toate fisierele intr-o singura versiune. ce versiune? numele versiunii este pus intre ghilimele dupa acel -m )
+- executa "git remote add origin origine-repository" ( comanda asta se executa o singura data, la inceput, iar ea ii spune git-ului in ce repository sa ne incarce codul ) ex: "git remote add origin git@github.com:Cristian-creator/test-github-1.git"
+- executa "git push -u origin main" ( comanda asta ii spunem git-ului sa ne incarce codul in repository )
+
+CUM MODIFICAM UN PROIECT DEJA INCARCAT IN GITHUB?
+
+- deschide VS Code in folderul cu proiectul / tema incarcata deja pe GitHub (ATENTIE!!! sa fie fix acelasi folder)
+- deschide terminalul
+- executa "git add ."
+- executa "git commit -m 'mesaj'"
+- executa "git push"
