@@ -9,6 +9,7 @@
 
     /* Atentie!! */
     /* - ca sa functioneze centrarea trebuie sa existe spatiu disponibil pe latime */
+    /* - si elementul trebuie sa fie de tip block sau sa fie setat cu display: block  */
     margin-left: auto;
     margin-right: auto;
 }
