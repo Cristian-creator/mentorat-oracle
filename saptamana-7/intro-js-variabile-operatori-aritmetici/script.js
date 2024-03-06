@@ -63,3 +63,10 @@ let pretCuTVA = pretInitial + 0.19 * pretInitial;
 
 console.log( pretInitial );
 console.log( pretCuTVA );
+
+// Tema:
+// Ex 1) Sa se creeze o variabila reprezentand numele userului curent. Variabila sa fie de tip string, ca valoare poate fi orice
+// Ex 2) Sa se creeze o variabila reprezentand statusul userului curent - daca este administrator sau nu. Variabila sa aiba numele esteAdmin si sa fie de tip boolean
+// Ex 3) Sa se creeze o variabila a de tip number si sa aiba valoarea 20, o variabila de tip number si sa aiba valoarea 7, sa se afiseze in consola suma, diferenta, inmultirea si impartirea lor.
+// Ex 4) Extra - sa se afiseze in consola lungimea string-ului de la exercitiul 1. De exemplu, daca nunele userului curent este "Cristian" sa se afiseze in consola 8. Referinta: https://www.w3schools.com/jsref/jsref_length_string.asp
+// Resursa extra interesanta - https://www.w3schools.com/jsref/jsref_replace.asp
