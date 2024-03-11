@@ -9,11 +9,11 @@ let c = a > b;
 // console.log( 8 !== 7 );
 
 // --------------  If statement  ------------
-// let idUserCurent = 4;
+let idUserCurent = 4;
 
-// if (idUserCurent <= 5) {
-//     console.log("bine ai venit, admine");
-// }
+if (idUserCurent <= 5) {
+    console.log("bine ai venit, admine");
+}
 
 // 19:31
 // Ex 1) Sa se creeze o variabila reprezentand temperatura din Bucuresti. Daca temperatura este sub 10 ( strict )
@@ -24,13 +24,14 @@ let c = a > b;
 // mesajul "variabila a este mai mare decat b"
 
 // --------------  Else  ------------
-let idUserCurent = 7;
+// let idUserCurent = 5;
 
-if (idUserCurent <= 5) {
-    console.log("bine ai venit, admine");
-} else {
-    console.log("bine ai venit, usere");
-}
+// // 1, 2, 3, 4, 5
+// if (idUserCurent <= 5) {
+//     console.log("bine ai venit, admine");
+// } else {
+//     console.log("bine ai venit, usere");
+// }
 
 // 20:05
 // Ex 4) Sa se creeze o variabila reprezentand temperatura din Bucuresti. Daca temperatura este sub 10 ( strict )
@@ -40,19 +41,19 @@ if (idUserCurent <= 5) {
 // Ex 6) Sa se creeze o variabila a si o variabila b. Daca a este mai mare decat b atunci sa se afiseze in consola
 // mesajul "variabila a este mai mare decat b", , in caz contrar sa se afiseze in consola "variabila b este mai mare decat a"
 
-let numeleMeu = "Cristian"; // double quotes, single quotes
+// let numeleMeu = "Cristian"; // double quotes, single quotes
 
-console.log( `Numele meu este ${numeleMeu}. Iar id-ul meu este ${idUserCurent}` ); // va ganditi la backticks atunci cand vreti intr-un string sa inserati valoarea unei variabile
+// console.log( `Numele meu este ${numeleMeu}. Iar id-ul meu este ${idUserCurent}` ); // va ganditi la backticks atunci cand vreti intr-un string sa inserati valoarea unei variabile
 
-console.log( "Numele meu este " + numeleMeu + "." );
+// console.log( "Numele meu este " + numeleMeu + "." );
 
 let contorizator = 0;
 
-contorizator = contorizator + 2;
-contorizator = contorizator + 2;
-contorizator = contorizator + 2;
+// contorizator = contorizator + 2;
+// contorizator = contorizator + 2;
+// contorizator = contorizator + 2;
 
-console.log(contorizator);
+// console.log(contorizator);
 
 // --------------  Functii  ------------
 // arrow function
@@ -127,4 +128,139 @@ let calculeazaSumaNumere = (primulParametru, alDoileaParametru) => {
 
 let d = calculeazaSumaNumere(3, 5);
 
+// Tema:
+// Ex 1) Sa se creeze o variabila reprezentand numărul de produse pe care le are un user în cos. Daca numărul de produse este peste 5 ( inclusiv ) afișează în consola “Ai transport gratuit”.
+// Ex 2) Sa se creeze o variabila reprezentand parola userului curent (ca valoarea a variabilei puneti orice string, ex: "pisicutsa123"). Apoi sa se afiseze in consola "Lungimea parolei este de X caractere" 
+// Ex 3) Daca lungimea parolei este mai mare decat 8 sa se afiseze in consola "Puternica", altfel sa afiseze in consola "Slaba"
+// Ex 4) Sa se creeze o variabila reprezentand numărul de produse pe care le are un user în cos. Daca numărul de produse este peste 5 afișează în consola “Ai transport gratuit”, altfel sa se afișeze “Mai adauga X produse ca sa ai transport gratuit”. X reprezintă diferența pana la 5. 
+// Ex 5) Sa se creeze o funcție care primește un parametru ( știm ca e de tip number ), iar functia sa returneze valorea parametrului plus 10
+// Ex 6) Sa se creeze o funcție care primește un parametru ( știm ca e de tip number ), iar functia sa returneze valorea parametrului inmultita cu 3
+// Ex 7) Sa se creeze o funcție care primește doi parametrii ( știm ca amandoi de tip number ), iar functia sa returneze diferenta lor
+// Ex 8) Sa se creeze o funcție care primește un parametru ( știm ca e de tip number ), iar functia sa returneze true dacă valoarea parametrului este mai mai mare decât 5, iar în caz contrar sa returneze false.
+// Ex 9) Sa se creeze o funcție care primește doi parametrii ( știm ca amandoi sunt de tip number ), iar functia sa returneze true dacă suma celor doi este mai mai mare decât 10, iar în caz contrar sa returneze false.
+// Ex 10)  Sa se creeze o funcție care primește un parametru ( știm ca e de tip string ). Funcția sa returneze lungimea lui. De exemplu, dacă apelam funcția cu parametrul “Hello”, functia sa returneze 5
 
+// Ex 1) Sa se creeze o variabila reprezentand numărul de produse pe care le are un user în cos. 
+// Daca numărul de produse este peste 5 ( inclusiv ) afișează în consola “Ai transport gratuit”.
+
+// let numberOfProducts = 3;
+
+// if (numberOfProducts >= 5) {
+//     console.log( "Ai transport gratuit" );
+// } 
+
+// Ex 5) Sa se creeze o funcție care primește un parametru ( știm ca e de tip number ), 
+// iar functia sa returneze valorea parametrului plus 10
+
+// let number = 5;
+
+// let plusTen = (numberParameter) => {
+//     return numberParameter + 10;
+// };
+
+// console.log( plusTen(5) );
+// console.log( plusTen(8) );
+// console.log( plusTen(123131231) );
+
+// Ex 11) Sa se creeze o functie care primeste doi parametrii ( reprezentand 2 numere )
+// Functia sa returneze impartirea lor
+
+let impartire = (a, b) => { 
+    return a / b;
+};
+
+// Ex 12) Sa se creeze o functie care primeste un parametru ( reprezetand un numar )
+// Functia sa returneze "Pozitiv" daca parametrul este mai mare sau egal cu zero
+// in caz contrar sa returneze "Negativ"
+
+let creazaFunctia = (paraUnuMetru) => {
+    return paraUnuMetru >= 0 ? true : false;
+}
+
+// Ex 13) Sa se creeze o functie care primeste doi parametrii a si b ( reprezentand 2 numere )
+// Functia sa returneze "a este mai mare decat b" daca a este mai mare decat b,
+// in caz contrar functia sa returneze "b este mai mare decat a"
+
+// let compareTwoNumbers = (a, b) => {
+//     // a = 8
+//     // b = 12
+//     if (a > b) {
+//         return "a este mai mare decat b";
+//     } else {
+//         return "b este mai mare decat a";
+//     }
+// };
+// AICI MERGE FARA ELSE
+// let compareTwoNumbers = (a, b) => {
+//     // a = 12
+//     // b = 8
+//     if (a > b) {
+//         return "a este mai mare decat b";
+//     }
+
+//     return "b este mai mare decat a";
+// };
+// AICI NU MERGE FARA ELSE
+// let compareTwoNumbers = (a, b) => {
+//     // a = 12
+//     // b = 8
+//     if (a > b) {
+//         console.log("a este mai mare decat b");
+//     }
+
+//     console.log("b este mai mare decat a");
+// };
+
+// Ca sa testam un return
+// ASA NU:
+// compareTwoNumbers(12, 8);
+// "b este mai mare decat a";
+// ASA DA:
+// console.log( compareTwoNumbers(8, 12) );
+// console.log( "b este mai mare decat a" );
+
+// Ex 13) Sa se creeze o functie care primeste doi parametrii a si b ( reprezentand 2 numere )
+// Functia sa returneze "a este mai mare decat b" daca a este mai mare decat b,
+// functia sa returneze "a este egal cu b" daca a este egal cu b,
+// in caz contrar functia sa returneze "b este mai mare decat a"
+
+// Varianta 1
+// let compareTwoNumbers = (a, b) => {
+//     // a = 12
+//     // b = 8
+//     if (a > b) {
+//         return "a este mai mare decat b";
+//     }
+
+//     if (a === b) {
+//         return "a este egal cu b";
+//     }
+
+//     return "b este mai mare decat a";
+// };
+
+// Varianta 2
+// let compareTwoNumbers = (a, b) => {
+//     if (a > b) {
+//         return "a este mai mare decat b";
+//     } else if (a === b) {
+//         return "a este egal cu b";
+//     } else {
+//         return "b este mai mare decat a";
+//     }
+// };
+
+// Varianta 3
+let compareTwoNumbers = (a, b) => {
+    let result = "";
+
+    if (a > b) {
+        result = "a este mai mare decat b";
+    } else if (a === b) {
+        result = "a este egal cu b";
+    } else {
+        result = "b este mai mare decat a";
+    }
+
+    return result;
+};
