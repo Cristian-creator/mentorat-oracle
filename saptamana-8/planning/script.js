@@ -53,3 +53,24 @@ console.log(listaDeCumparaturi);
 listaDeCumparaturi.splice(2, 1);
 
 console.log(listaDeCumparaturi);
+
+// Tema:
+
+// Exercitii
+// 1. Sa se creeze o functie care primeste trei parametrii ( d, e și f ) si returneaza produsul lor
+// 2. Sa se creeze o functie care primeste un parametru ( x ) si returneaza diferența lui cu 10. De exemplu dacă x = 16, funcția sa returneze 6
+// 3. Sa se creeze o functie care primeste un parametru ( a ) si returneaza opusul lui. De exemplu dacă a este 7 funcția sa returneze -7.
+// 4. Sa se creeze o functie care primeste doi parametrii ( x si y ) si returneaza diferenta lor inmultita cu 2. Ex: dacă x = 24, y = 4, funcția sa returneze valoarea 40, adica (24 - 4) * 2
+// 5. Sa se creeze o functie care primeste un parametru ( notaMea ) si returneaza “Promovat” dacă valoarea parametrului este peste 5 ( inclusiv ), în caz contrar returnează “Picat”
+// 5. Sa se creeze o functie care primeste un parametru ( notaMea ) si returneaza “Promovat” dacă valoarea parametrului este peste 5, returneaza "la limita bro" daca valoarea parametrului este 5, în caz contrar returnează “Picat”
+// 6. Sa se creeze o funcție care primeste doi parametrii ( a si b ) și dacă diferența lor ( a - b ) este mai mare decât 10, atunci sa returneze true, altfel false.
+// 7. Sa se creeze o funcție care primeste doi parametrii ( a si b ) și dacă cele doua numere sunt egale sa se returneze true, altfel false.
+// 8. Sa se creeze o funcție care primeste doi parametrii ( a si b ) și dacă este a mai mare decat b, atunci sa se returneze a, altfel b.
+// 9. Sa se creeze un array cu 3 elemente. Puteti sa il denumiti "primulMeuArray". Apoi:
+// - sa se afiseze in consola elementul de pe indexul 2
+// - sa se stearga elementul de pe indexul 2
+// - sa se afiseze in consola tot array-ul
+// - sa se adauge in array inca un element
+// - sa se afiseze in consola tot array-ul
+// - sa se stearga elementul nou adaugat
+// - sa se afiseze in consola tot array-ul
