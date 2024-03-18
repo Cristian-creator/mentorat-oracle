@@ -264,3 +264,14 @@ let compareTwoNumbers = (a, b) => {
 
     return result;
 };
+
+let numeleMeu = `Erhard`;
+
+let functionLengthErhard = (nume) => {
+    return `lungimea numelui Erhard este: ${ nume.length }`
+}
+
+let lungimeNume = functionLengthErhard(numeleMeu)
+
+console.log (lungimeNume)
+
