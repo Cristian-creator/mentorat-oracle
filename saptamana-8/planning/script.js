@@ -4,7 +4,7 @@
 
 // Q: cum arata un array?
 // A: ["Whisky", "Gheata", "Lapte", "Pui"]
-let listaDeCumparaturi = ["Whisky", "Gheata", "Lapte", "Pui"];
+let listaDeCumparaturi = ["Whisky", "Gheata", "Lapte", "Pui" ];
 // index-uri                 0         1         2       3
 
 // Q: ce poate contine un array?

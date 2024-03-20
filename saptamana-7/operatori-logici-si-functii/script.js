@@ -265,13 +265,13 @@ let compareTwoNumbers = (a, b) => {
     return result;
 };
 
-let numeleMeu = `Erhard`;
+const numeleMeu = `Erhard`;
 
-let functionLengthErhard = (nume) => {
+const functionLengthErhard = (nume) => {
     return `lungimea numelui Erhard este: ${ nume.length }`
 }
 
-let lungimeNume = functionLengthErhard(numeleMeu)
+const lungimeNume = functionLengthErhard(numeleMeu)
 
 console.log (lungimeNume)
 
