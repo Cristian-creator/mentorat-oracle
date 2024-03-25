@@ -70,21 +70,45 @@ console.log( myEvent.location.city );
 const cartProducts = [
     {
         id: 83172,
-        price: 199,
-        name: 'Product X',
+        price: 549,
+        name: 'Product A',
         quantity: 2,
+        category: "jewelery",
     },
     {
         id: 897032,
-        price: 50,
-        name: 'Product Y',
+        price: 100,
+        name: 'Product B',
         quantity: 4,
+        category: "electronics",
     },
     {
         id: 3821,
         price: 90,
-        name: 'Product Z',
-        quantity: 5,
+        name: 'Product C',
+        quantity: 1,
+        category: "women-clothing",
+    },
+    {
+        id: 319,
+        price: 30,
+        name: 'Product D',
+        quantity: 2,
+        category: "women-clothing",
+    },
+    {
+        id: 9342,
+        price: 2000,
+        name: 'Product E',
+        quantity: 1,
+        category: "jewelery",
+    },
+    {
+        id: 8,
+        price: 180,
+        name: 'Product F',
+        quantity: 2,
+        category: "electronics",
     },
 ];
 
@@ -190,27 +214,140 @@ const sayHello = () => {
 title.addEventListener('click', sayHello);
 
 
+// Ex 1) Sa se creeze o functie care primeste ca parametru un array de produse
+// Functia sa returneze suma totala de plata. Pretul fiecarui produs sa includa si TVA 19%
 
+// Ex 2) Sa se creeze o functie care primeste ca parametru un array de produse
+// Functia sa returneze "Ai livrare gratuita daca cumperi 5 bucati din produsul Z"
 
+// Ex 3) Sa se creeze o functie care primeste ca parametru un array de produse
+// Functia sa returneze suma totala a produselor care au pretul mai mare decat 80.
 
+// Ex 4) Sa se creeze o functie care primeste ca parametru un array de produse
+// Functia sa returneze numarul total de tipuri de produse din cos
 
+// ---- De aici incolo folositi array-ul de produse lasat mai jos (puteti sa modificati datele, structura e importanta)
 
+// Ex 5) Sa se creeze o functie care primeste ca parametru un array de produse
+// Functia sa returneze numarul total de produse din cos care sunt din categoria 'jewelery'
 
+// Ex 6) Sa se creeze o functie care primeste ca parametru un array de produse
+// Functia sa returneze mesajul "Ai cumparat produse din categoria de bijuterii in valoare de X lei"
 
+const getJeweleryTotalAmountToBePaid = (products) => {
+    let sum = 0;
 
-let valoareIndexDinArray = (arrayDeNumereImpare) => {
-    let maxim = arrayDeNumereImpare[0];
-    let index = 0;
-
-    for (let i = 1; i < arrayDeNumereImpare.length; i++) {
-        if(maxim < arrayDeNumere[i] && arrayDeNumere[i] % 2 ===1) {
-            maxim = arrayDeNumere[i];
-            index = i;
+    for (let i = 0;i < products.length;i++) {
+        if (products[i].category === 'jewelery') {
+            sum += products[i].quantity * products[i].price;
         }
     }
 
-    return i;
-}
+    return `Ai cumparat produse din categoria de bijuterii in valoare de ${sum} lei`;
+};
 
-console.log(valoareIndexDinArray([5, 7, 2, 3, 13, 10]));
-//                                0  1  2  3   4   5
+// Ex 7) Sa se creeze o functie care primeste ca parametru un array de produse
+// Functia sa returneze mesajul "Cel mai scump produs pe care l-ai selectat este X, ai comandat o cantitate de Y si vei plati Z lei"
+
+const getMaximumValue = (arrayOfNumbers) => {
+    let max = arrayOfNumbers[0];
+
+    for (let i = 1;i < arrayOfNumbers.length;i++) {
+        if (arrayOfNumbers[i] > max) {
+            max = arrayOfNumbers[i];
+        }
+    }
+
+    return max;
+};
+
+const numbers = [1, 0, 84, 2, 9, 37];
+
+getMaximumValue(numbers);
+
+// varianta 1
+// const getTheMostExpensiveProduct = (products) => {
+//     let max = products[0].price;
+
+//     for (let i = 1;i < products.length;i++) {
+//         if (products[i].price > max) {
+//             max = products[i].price;
+//         }
+//     }
+
+//     for (let i = 0;i < products.length;i++) {
+//         if (products[i].price === max) {
+//             return `Cel mai scump produs pe care l-ai selectat este ${products[i].name}, ai comandat o cantitate de ${products[i].quantity} si vei plati ${products[i].price * products[i].quantity} lei`;
+//         }
+//     }
+// };
+
+const getTheMostExpensiveProduct = (products) => {
+    let max = products[0].price;
+    let indexOfMax = 0;
+
+    for (let i = 1;i < products.length;i++) {
+        if (products[i].price > max) {
+            max = products[i].price;
+            indexOfMax = i;
+        }
+    }
+
+    // Q: cum accesez valoarea unui element dintr-un array?
+    // A: pe baza index-ului
+
+    return `Cel mai scump produs pe care l-ai selectat este ${products[indexOfMax].name}, ai comandat o cantitate de ${products[indexOfMax].quantity} si vei plati ${products[indexOfMax].price * products[indexOfMax].quantity} lei`;
+};
+
+getTheMostExpensiveProduct(cartProducts);
+
+// Ex 8) Sa se creeze o functie care primeste ca parametru un array de produse
+// Functia sa returneze mesajul "Cel mai ieftin produs pe care l-ai selectat are id-ul X"
+
+const getTheMostCheapestProduct = (products) => {
+    let min = products[0].price;
+    let indexOfMin = 0;
+
+    for (let i = 1;i < products.length;i++) {
+        if (products[i].price < min) {
+            min = products[i].price;
+            indexOfMin = i;
+        }
+    }
+
+    return `Cel mai ieftin produs pe care l-ai selectat are id-ul ${products[indexOfMin].id}`;
+};
+
+// Ex 9) Sa se creeze o functie care primeste ca parametru un array de produse
+// Functia sa returneze mesajul "Ai castigat o bratara" daca suma produselor din categoria "women-clothing" depaseste 300
+
+const getTotalOfWomenClothingProducts = (products) => {
+    let sum = 0;
+
+    for (let i = 0;i < products.length;i++) {
+        if (products[i].category === 'women-clothing') {
+            sum += products[i].quantity * products[i].price;
+        }
+    }
+
+    if (sum > 300) {
+        return 'Ai castigat o bratara';
+    }
+};
+
+console.log( getTotalOfWomenClothingProducts(cartProducts) );
+
+// Ex 4) Sa se creeze o functie care primeste ca parametru un array de produse
+// Functia sa returneze numarul total de categorii din cos
+
+const getNumberOfCategories = (products) => {
+    let uniqueCategories = [];
+
+    for (let i = 0;i < products.length;i++) {
+        if (uniqueCategories.includes(products[i].category) === false) {
+            uniqueCategories.push(products[i].category);
+        }
+    }
+
+    return uniqueCategories.length;
+};
