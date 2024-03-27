@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    font-family: "Kode Mono", monospace;
+}
+
+.color-switcher-container {
+    background-color: #AD636C;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.color-switcher-text-container {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    display: flex;
+    gap: 12px;
+}
+
+.color-switcher-text-container h2 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.color-switcher-text-background {
+    color: white;
+}
+
+.color-switcher-text-color {
+    color: #009B72;
+}
+
+.color-switcher-button {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+}
