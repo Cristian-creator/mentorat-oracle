@@ -24,9 +24,13 @@ const myEvent = {
         number: 89,
     },
     numberOfAvailableTickets: 20,
+    showName: () => { // method
+        console.log('My tech Event');
+    }
 };
 
-console.log( myEvent );
+console.log( myEvent.location.city );
+myEvent.showName();
 
 // Q: ce este obiectul?
 // A: un tip de data din javascript
