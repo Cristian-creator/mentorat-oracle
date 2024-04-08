@@ -1,0 +1,43 @@
+/*  
+    Exercitiu 1:
+    [X] .square trebuie sa fie un patrat rosu pe telefon
+    [X] .square trebuie sa fie un patrat albastru pe tableta ( 768px+ )
+    [X] .square trebuie sa fie un patrat verde pe desktop ( 1024px+ )
+*/
+
+/* Urmam abordarea mobile-first */
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+/*                        breakpoint(s)  */
+@media screen and (min-width: 640px) {
+    .squares-container {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .square {
+        background-color: blue;
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .square {
+        background-color: green;
+        width: 200px;
+        margin-top: 100px;
+    }
+    .examples-container {
+        display: flex;
+    }
+}
+
+/* Best practices:
+    - foloseste un set minimalist si exact de breakpoints
+    - evita sa pui mai mult de 2-3 breakpoints pe un element
+ */
