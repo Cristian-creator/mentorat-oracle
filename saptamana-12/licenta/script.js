@@ -162,6 +162,3 @@ const removeFromCart = (product) => {
     }
 }
 
-https://www.codewars.com/kata/53dc54212259ed3d4f00071c
-https://www.codewars.com/kata/55a5befdf16499bffb00007b
-https://www.codewars.com/kata/56d6c333c9ae3fc32800070f
