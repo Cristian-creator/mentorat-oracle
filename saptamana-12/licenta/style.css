@@ -1,97 +1,3 @@
-/* 
-    Breakpoints:
-    - 640
-    - 768
-    - 1024
-    - 1280
-    - 1536
-*/
-
-* {
-    margin: 0px;
-    padding: 0px;
-    border: none;
-    font-family: "Montserrat", sans-serif;
-}
-
-:root {
-    --white: #FFFFFF;
-    --purple: #6C44D7;
-    --green: #11DB33;
-}
-
-body {
-    position: relative;
-    min-height: 100vh;
-}
-
-/* --- Common --- */
-.section-container {
-    padding: 16px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- Navbar --- */
-.navbar {
-    background-color: var(--purple);
-    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
-}
-
-.navbar-content {
-    display: flex;
-    justify-content: space-between;
-}
-
-.navbar-content h3 {
-    color: var(--white);
-    font-size: 20px;
-}
-
-.navbar-cart-icon {
-    cursor: pointer;
-}
-
-/* --- Sidebar --- */
-.sidebar-container {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    background-color: var(--white);
-    padding: 16px;
-    height: calc(100% - 32px);
-    width: 300px;
-    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.25);
-    z-index: 100;
-    transform: translateX(110%);
-    transition-property: transform;
-    transition-duration: 0.25s;
-    overflow: scroll;
-}
-
-.sidebar-title {
-    margin-bottom: 16px;
-}
-
-@media screen and (min-width: 1024px) {
-    .sidebar-container {
-        width: 400px;
-    }
-}
-
-/* --- Overlay --- */
-.overlay {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.25);
-    display: none;
-    cursor: pointer;
-}
-
 /* --- Product card --- */
 .product-card-container {
     box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.10);
@@ -110,6 +16,11 @@ body {
 
 .product-card-details {
     padding: 16px;
+}
+
+.product-card-link {
+    text-decoration: none;
+    color: var(--black);
 }
 
 .product-card-details h3 {

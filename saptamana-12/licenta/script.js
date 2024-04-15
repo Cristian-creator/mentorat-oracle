@@ -1,22 +1,3 @@
-// ------- Setup sidebar -------
-const navbarCartIcon = document.querySelector('.navbar-cart-icon');
-const sidebar = document.querySelector('.sidebar-container');
-const overlay = document.querySelector('.overlay');
-
-const openSidebar = () => {
-    sidebar.style.transform = 'translateX(0px)';
-    overlay.style.display = 'block';
-};
-
-navbarCartIcon.addEventListener('click', openSidebar);
-
-const closeSidebar = () => {
-    sidebar.style.transform = 'translateX(110%)';
-    overlay.style.display = 'none';
-};
-
-overlay.addEventListener('click', closeSidebar);
-
 // ------- Generate cards -------
 const productsSection = document.querySelector('.products-section');
 const cartProductsSection = document.querySelector('.cart-products-container');
@@ -32,9 +13,13 @@ const createProductCards = async () => {
         productCardContainer.classList.add('product-card-container');
 
         productCardContainer.innerHTML = `
-            <div style="background-image: url('${product.image}');" class="product-card-image"></div>
+            <a href="/product.html?id=${product.id}">
+                <div style="background-image: url('${product.image}');" class="product-card-image"></div>
+            </a>
             <div class="product-card-details">
-                <h3> ${product.title} </h3>
+                <a class="product-card-link" href="/product.html?id=${product.id}">
+                    <h3> ${product.title} </h3>
+                </a>
                 <p class="product-card-description"> ${product.description} </p>
                 <p class="product-card-price"> $${product.price} </p>
             </div>
@@ -67,7 +52,19 @@ createProductCards();
 
 let cartProducts = [];
 
+const cartTotal = document.querySelector('.cart-total');
+
 const updateSidebarProducts = () => {
+    // calculare & update total
+    let total = 0;
+
+    for (let i = 0;i < cartProducts.length;i++) {
+        total += cartProducts[i].price * cartProducts[i].quantity;
+    }
+
+    cartTotal.innerText = total;
+
+    // update pe produsele din sidebar
     cartProductsSection.innerHTML = '';
 
     cartProducts.forEach((cartProduct) => {
@@ -122,6 +119,8 @@ const updateSidebarProducts = () => {
     });
 };
 
+const noItemsInCartText = document.querySelector('.no-items-in-cart-text');
+
 const addToCart = (product) => {
     const productIndex = cartProducts.findIndex((cartProduct) => cartProduct.id === product.id);
 
@@ -141,6 +140,8 @@ const addToCart = (product) => {
     console.log('after --------', cartProducts);
 
     updateSidebarProducts();
+
+    noItemsInCartText.style.display = 'none';
 };
 
 const removeFromCart = (product) => {
@@ -155,4 +156,12 @@ const removeFromCart = (product) => {
     }
 
     updateSidebarProducts();
+
+    if (cartProducts.length === 0) {
+        noItemsInCartText.style.display = 'block';
+    }
 }
+
+https://www.codewars.com/kata/53dc54212259ed3d4f00071c
+https://www.codewars.com/kata/55a5befdf16499bffb00007b
+https://www.codewars.com/kata/56d6c333c9ae3fc32800070f
