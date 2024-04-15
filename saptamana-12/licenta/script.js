@@ -82,13 +82,41 @@ const updateSidebarProducts = () => {
                     <p> Total: $${cartProduct.price * cartProduct.quantity} </p>
                 </div>
                 <div class="cart-product-buttons-container">
-                    <button> - </button>
+                    <button class="remove-from-cart-button-sidebar"> - </button>
                     <p> ${cartProduct.quantity} </p>
-                    <button> + </button>
+                    <button class="add-to-cart-button-sidebar"> + </button>
                 </div>
             </div>
             <div style="background-image: url('${cartProduct.image}');" class="cart-product-image"></div>
         `;
+
+        // aici am setat butonul de adaugare cantitate produs
+        const addToCartButton = cartProductContainer.querySelector('.add-to-cart-button-sidebar');
+
+        addToCartButton.addEventListener('click', () => {
+            const productData = {
+                id: cartProduct.id,
+                title: cartProduct.title,
+                price: cartProduct.price,
+                image: cartProduct.image,
+            };
+
+            addToCart(productData);
+        });
+
+        // aici am setat butonul de scadere cantitate produs
+        const removeFromCartButton = cartProductContainer.querySelector('.remove-from-cart-button-sidebar');
+
+        removeFromCartButton.addEventListener('click', () => {
+            const productData = {
+                id: cartProduct.id,
+                title: cartProduct.title,
+                price: cartProduct.price,
+                image: cartProduct.image,
+            };
+
+            removeFromCart(productData);
+        });
 
         cartProductsSection.appendChild(cartProductContainer);
     });
@@ -114,3 +142,17 @@ const addToCart = (product) => {
 
     updateSidebarProducts();
 };
+
+const removeFromCart = (product) => {
+    const productIndex = cartProducts.findIndex((cartProduct) => cartProduct.id === product.id);
+
+    const productQuantity = cartProducts[productIndex].quantity;
+
+    if (productQuantity === 1) {
+        cartProducts.splice(productIndex, 1);
+    } else {
+        cartProducts[productIndex].quantity = productQuantity - 1;
+    }
+
+    updateSidebarProducts();
+}

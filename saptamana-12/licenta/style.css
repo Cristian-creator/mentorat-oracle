@@ -162,6 +162,9 @@ body {
 }
 
 @media screen and (min-width: 1280px) {
+    .product-card-container {
+        width: 282px;
+    }
     .products-section {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
