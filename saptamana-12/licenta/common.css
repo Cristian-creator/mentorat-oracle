@@ -19,6 +19,7 @@
     --purple: #6C44D7;
     --green: #11DB33;
     --black: #000000;
+    --mediumGray: #98959B;
 }
 
 body {
@@ -100,3 +101,24 @@ body {
     display: none;
     cursor: pointer;
 }
+
+/* --- Loading spinner --- */
+.spinner {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 3.8px solid;
+    border-color: #dbdcef;
+    border-right-color: #6c44d7;
+    animation: spinner-d3wgkg 0.8s infinite linear;
+
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ 
+ @keyframes spinner-d3wgkg {
+    to {
+       transform: rotate(1turn);
+    }
+ }

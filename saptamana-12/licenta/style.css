@@ -1,3 +1,30 @@
+/* --- Filters --- */
+.filters-section-title {
+    color: var(--mediumGray);
+    margin-bottom: 8px;
+}
+
+.filter-buttons-container {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    padding: 4px 6px;
+    background-color: var(--purple);
+    color: var(--white);
+    font-size: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition-property: color;
+    transition-duration: 0.25s;
+}
+
+.filter-button:hover {
+    color: var(--mediumGray);
+}
+
 /* --- Product card --- */
 .product-card-container {
     box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.10);

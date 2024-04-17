@@ -1,0 +1,45 @@
+.product-image {
+    height: 300px;
+    /* background-image: url('https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg'); */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 16px;
+}
+
+.product-category {
+    display: none;
+    width: fit-content;
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 4px 6px;
+    font-size: 12px;
+    border-radius: 12px;
+    margin-left: auto;
+}
+
+.product-name {
+    margin-bottom: 16px;
+}
+
+.product-price {
+    font-size: 20px;
+    color: var(--purple);
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.product-description {
+    color: var(--mediumGray);
+}
+
+@media screen and (min-width: 768px) {
+    .product-container {
+        display: flex;
+        gap: 24px;
+    }
+    .product-image {
+        min-width: 50%;
+        height: 400px;
+    }
+}
