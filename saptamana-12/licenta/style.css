@@ -1,3 +1,16 @@
+.search-and-filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media screen and (min-width: 768px) {
+    .search-and-filter-section {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
 /* --- Filters --- */
 .filters-section-title {
     color: var(--mediumGray);
@@ -23,6 +36,45 @@
 
 .filter-button:hover {
     color: var(--mediumGray);
+}
+
+.products-section-spinner {
+    display: none;
+}
+
+/* --- Search --- */
+.search-product-form {
+    display: flex;
+    gap: 8px;
+}
+
+.search-product-input {
+    flex: 1;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--mediumGray);
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.search-product-button {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: var(--purple);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.search-product-spinner {
+    display: none;
 }
 
 /* --- Product card --- */

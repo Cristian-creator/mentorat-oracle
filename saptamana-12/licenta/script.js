@@ -1,13 +1,9 @@
 // ------- Generate cards -------
 const productsSection = document.querySelector('.products-section');
+
 const cartProductsSection = document.querySelector('.cart-products-container');
 
-const createProductCards = async () => {
-    const serverResponse = await fetch('https://fakestoreapi.com/products');
-    const products = await serverResponse.json(); 
-
-    console.log(products);
-
+const generateProductCards = (products) => {
     products.forEach((product) => {
         const productCardContainer = document.createElement('div');
         productCardContainer.classList.add('product-card-container');
@@ -45,7 +41,15 @@ const createProductCards = async () => {
             openSidebar();
         });
     });
+};
 
+const createProductCards = async () => {
+    const serverResponse = await fetch('https://fakestoreapi.com/products');
+    const products = await serverResponse.json(); 
+
+    console.log(products);
+
+    generateProductCards(products);
 };
 
 createProductCards();
@@ -162,3 +166,62 @@ const removeFromCart = (product) => {
     }
 }
 
+// ------- Filters Setup ------
+const filterButtons = document.querySelectorAll('.filter-button');
+const productsSectionSpinner = document.querySelector('.products-section-spinner');
+
+const filterProducts = async (e) => {
+    // afisam loading spinner
+    productsSectionSpinner.style.display = 'block';
+    // stergem cardurile curente
+    productsSection.innerHTML = '';
+
+    // request catre fakestoreapi
+    const selectedFilter = e.target.getAttribute('value');
+
+    const url = selectedFilter === 'none' ? 'https://fakestoreapi.com/products' : `https://fakestoreapi.com/products/category/${selectedFilter}`; // ternary operator
+
+    const serverResponse = await fetch(url);
+    const newProducts = await serverResponse.json();
+
+    console.log(newProducts);
+
+    generateProductCards(newProducts);
+
+    // ascundem loading spinner
+    productsSectionSpinner.style.display = 'none';
+};
+
+filterButtons.forEach((filterButton) => {
+    filterButton.addEventListener('click', filterProducts);
+});
+
+// ------- Search Setup ------
+const searchForm = document.querySelector('.search-product-form');
+const searchSpinner = document.querySelector('.search-product-spinner');
+const searchButtonText = document.querySelector('.search-product-button-text');
+
+const searchProduct = (e) => {
+    e.preventDefault();
+
+    // afisam loading spinner & ascundem text buton
+    searchSpinner.style.display = 'block';
+    searchButtonText.style.display = 'none';
+
+    // luam id-ul introdus de user
+    const formData = new FormData(searchForm);
+    const productId = formData.get('product-id');
+
+    // request catre fakestoreapi sa obtinem informatii doar despre produsul cu acel id
+
+    // afisam produsul in pagina
+
+    // daca serverul nu a gasit produsul, sa afisam un text "No matches found"
+    // hint - vezi pagina de produs
+
+    // ascundem loading spinner & afisam text buton
+
+    console.log(productId);
+};
+
+searchForm.addEventListener('submit', searchProduct);

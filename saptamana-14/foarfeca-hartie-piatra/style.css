@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    height: 100vh;
+    position: relative;
+    
+}
+
+.section-container {
+    height: 100%;
+    width: 100%;
+}
+.utilities {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+} 
+
+.section-players-container {
+    display: flex;
+    gap: 8px;
+}
+
+.section-player-one, .section-player-two {
+    border: 5px solid red;
+    border-radius: 16px;
+}
+.section-players-container-players {
+    margin-top: 16px;
+    background-color: rgb(11, 160, 24);
+    border-radius: 8px;
+    font-size: 20px;
+    color: white;
+    padding: 8px;
+}
+.button-piatra, .button-hartie, .button-foarfeca {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 8px;
+
+}
+
+.button-piatra {
+background-image: url('./piatra.png');
+}
+.button-piatra:hover, .button-hartie:hover, .button-foarfeca:hover {
+   transition-property: opacity;
+   opacity: 0.5;
+   
+}
+
+/* .button-piatra:active, .button-hartie:active, .button-foarfeca:active {
+    transition-property: opacity;
+    opacity: 0.5;
+ } */
+
+.button-hartie {
+    background-image: url('./hartie.png');
+}
+
+.button-foarfeca {
+    background-image: url('./foarfeca.png');
+}
+
+.section-container-buttons {
+    padding: 20px 10px;
+
+}
+
+.section-container-submit-button {
+    margin-top: 16px;
+    padding: 16px;
+    background-color: rgb(25, 155, 25);
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    
+}
+
+
+.section-container-castigatorul {
+    position: absolute;
+    top: 250px;
+    padding: 12px;
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    animation-name: winner;
+    animation-duration: 10s;
+    display: none; 
+}
+
+@keyframes winner {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+  }
+
+  .section-after-game {
+    display: flex;
+    display: none;
+    position: absolute;
+    top: 350px;
+    max-width: 350px;
+  }
+
+  .scor-button, .back-button {
+    margin: 16px;
+    padding: 16px;
+    background-color: rgb(89, 90, 91);
+    border-radius: 8px;
+    color: rgb(251, 246, 246);
+    font-size: 20px;
+    cursor: pointer;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    background-color: blueviolet;
+    color: white;
+    position: absolute;
+    top: 200px;
+    display: none;
+    
+  }
+  td, th {
+    border: 2px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+th {
+    font-size: 20px;
+}
+  td {
+    font-size: 60px;
+  }
+
+/* ---- Player one ---- */
+.player-one-choose-button.active, .player-two-choose-button.active {
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    transition-property: box-shadow;
+    transition-duration: 0.25s;
+}
