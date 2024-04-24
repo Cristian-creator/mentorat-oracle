@@ -1,0 +1,61 @@
+* {
+    margin: 0px;
+    font-family: "Roboto";
+}
+
+.todos-card {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px;
+}
+
+.add-todo-container {
+    margin-top: 24px;
+    display: flex;
+    gap: 8px;
+}
+
+.add-todo-input-container {
+    flex: 1;
+    position: relative;
+}
+
+.add-todo-input {
+    width: calc(100% - 26px);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    border-color: gray;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.add-todo-error {
+    color: red;
+    position: absolute;
+    bottom: -24px;
+    display: none;
+}
+
+.add-todo-button {
+    border-radius: 4px;
+    font-size: 16px;
+    border-color: gray;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+}
+
+.todos-list {
+    margin-top: 24px;
+}
+
+.todos-list li {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+}
