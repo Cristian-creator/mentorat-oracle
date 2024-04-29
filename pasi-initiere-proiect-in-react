@@ -1,0 +1,7 @@
+1) Creeaza un folder nou
+2) Deschide VS Code-ul in folderul nou
+3) Deschide un terminal nou
+4) Mergi pe sageata din dreapta (de langa plus) si selecteaza Command prompt / terminal
+5) npm create vite@latest . -- --template react ( asta o sa iti initalizeze structura proiectului )
+6) npm install ( asta o sa iti instaleze niste dependencies )
+7) npm run dev ( asta o sa iti porneasca server-ul pe care ruleaza aplicatia )

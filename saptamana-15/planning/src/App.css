@@ -1,0 +1,9 @@
+* {
+    margin: 0px;
+    font-family: 'Roboto';
+}
+
+:root {
+    --white: #FFFFFF;
+    --copper: #AA7D48;
+}
