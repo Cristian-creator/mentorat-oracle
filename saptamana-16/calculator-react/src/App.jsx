@@ -43,4 +43,6 @@ export default App
 // - button pentru inmultire cu 2
 // - button pentru impartire cu 2
 // - buttonul de decrease sa fie disabled cand cifra este mai mica decat zero
-// - sa se afiseze un alert atunci cand cifra introdusa in input este in afara intervalului (-100, 100)
+// - sa se afiseze un alert atunci cand cifra introdusa in input este in afara intervalului (-100, 100) si sa nu se modifice currentNumber
+// - butonul de reset sa fie ascuns cand cifra curenta este zero
+// - intr-un loc din pagina sa se afiseze numarul de resetari ale calculatorului ( de cate ori a fost apasat butonul de reset )
