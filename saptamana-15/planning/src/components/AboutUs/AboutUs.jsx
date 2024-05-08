@@ -22,6 +22,14 @@ const AboutUs = () => {
             title: 'Item 4',
             description: 'Lorem ipsum item 4 ......'
         },
+        {
+            title: 'Item 5',
+            description: 'Lorem ipsum item 5 ......'
+        },
+        {
+            title: 'Item 6',
+            description: 'Lorem ipsum item 6 ......'
+        },
     ];
 
     const numeleMeu = 'Cristian';
