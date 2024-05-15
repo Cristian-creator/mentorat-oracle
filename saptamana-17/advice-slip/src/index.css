@@ -1,0 +1,11 @@
+* {
+  margin: 0px;
+  font-family: "Strait", sans-serif;
+}
+
+:root {
+  --lightGreen: #53FFAB;
+  --lightGray: #D9D9D9;
+  --mediumBlue: #313A49;
+  --darkBlue: #202632;
+}
