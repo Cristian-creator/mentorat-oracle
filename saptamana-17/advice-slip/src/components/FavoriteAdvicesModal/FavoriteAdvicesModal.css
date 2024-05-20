@@ -1,0 +1,26 @@
+.favorite-advices-modal-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.favorite-advices-modal-card {
+    max-width: 400px;
+    background-color: var(--lightGray);
+    border-radius: 20px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px;
+}
+
+.favorite-advices-modal-title {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 24px;
+}

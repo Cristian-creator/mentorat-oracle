@@ -17,6 +17,15 @@
     max-width: 540px;
 }
 
+.add-to-favorites-button {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
 .advice-id {
     font-size: 15px;
     color: var(--lightGreen);
@@ -73,19 +82,26 @@
     right: 0px;
     width: fit-content;
 
-    transition-property: box-shadow, transform, background-color;
-    transition-duration: 0.5s;
+    transition-property: box-shadow;
+    transition-duration: 0.2s;
 }
 
 .generate-advice-button:hover {
     box-shadow: 0px 0px 30px 0px var(--lightGreen);
-    transform: rotate(360deg);
-    transition: all 0.3s ease-in-out 0s;
 }
 
 .generate-advice-button:disabled {
     background-color: var(--lightGray);
     box-shadow: 0px 0px 30px 0px var(--lightGray);
+}
+
+@media screen and (min-width: 768px) {
+    .advice-card-container {
+        width: 540px;
+    }
+    .advice-content {
+        min-height: 66px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -95,6 +111,26 @@
     .separator-container {
         margin-bottom: 40px;
     }
+}
+
+/* --- Show favorites --- */
+.show-favorites-button {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
+    background-color: var(--lightGreen);
+    border: none;
+    color: var(--darkBlue);
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    transition-property: box-shadow;
+    transition-duration: 0.2s;
+}
+
+.show-favorites-button:hover {
+    box-shadow: 0px 0px 30px 0px var(--lightGreen);
 }
 
 /* --- Loading spinner --- */
@@ -112,4 +148,4 @@
     to {
        transform: rotate(1turn);
     }
- }
+}

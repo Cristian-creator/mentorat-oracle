@@ -1,31 +1,80 @@
 import { useState } from 'react';
 import './App.css';
 import dice from './assets/dice.svg';
+import { initialAdvice } from './initialAdvice';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteAdvicesModal from './components/FavoriteAdvicesModal/FavoriteAdvicesModal';
 
 const App = () => {
-  const [advice, setAdvice] = useState({
-    id: 117,
-    content: 'It it easy to sit up and take notice, what`s difficult is getting up and taking action.'
-  }); // hook
+  const [advice, setAdvice] = useState(initialAdvice); // hook
   const [isLoading, setIsLoading] = useState(false);
+  const [favoriteAdvices, setFavoriteAdvices] = useState([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const currentAdviceIsAddedToFavorites = favoriteAdvices.findIndex((favoriteAdvice) => favoriteAdvice.id === advice.id) === -1 ? false : true;
 
   const generateAdvice = async () => {
     setIsLoading(true);
+    
+    try {
+      // block-scoped variables
+      const serverResponse = await fetch('https://api.adviceslip.com/advice');
+      const { slip: { id, advice } } = await serverResponse.json();
 
-    const serverResponse = await fetch('https://api.adviceslip.com/advice');
-    const data = await serverResponse.json();
+      setAdvice({
+        id,
+        content: advice
+      });
+    } catch(e) {
+      alert('An error occured, try again later.');
+    } finally {
+      setIsLoading(false);
+    }
 
-    setIsLoading(false);
-
-    setAdvice({
-      id: data.slip.id,
-      content: data.slip.advice
-    });
   };
+
+  const handleAddToFavorites = () => {
+    const indexOfCurrentAdvice = favoriteAdvices.findIndex((favoriteAdvice) => favoriteAdvice.id === advice.id);
+
+    if (indexOfCurrentAdvice === -1) {
+      // adaugam advice-ul la favorite
+      // mereu cand avem in state o variabila egala cu un obiect sau un array trebuie sa:
+      // 1. cream un nou obiect / array in care copiem continutul variabilei
+      const newFavoriteAdvices = [ ...favoriteAdvices ];
+      // 2. modificam noul obiect / array cum vrem noi
+      newFavoriteAdvices.push(advice);
+      // 3. adaugam noul obiect / array in state
+      setFavoriteAdvices(newFavoriteAdvices);
+    } else {
+      // eliminam advice-ul de la favorite
+      const newFavoriteAdvices = [ ...favoriteAdvices ];
+      newFavoriteAdvices.splice(indexOfCurrentAdvice, 1);
+      setFavoriteAdvices(newFavoriteAdvices);
+    }
+  }
+
+  const handleOpenModal = () => {
+    setModalIsOpen(true);
+  };
+
+  // cand o functie este creata intr-o componenta, ea nu poate fi exportata
+  // cand o functie contine ceva din state-ul componentei atunci nu putem o scoatem din componenta
+  const handleCloseModal = () => {
+    setModalIsOpen(false);
+  }
 
   return (
     <div className='app-container'>
+        <button onClick={handleOpenModal} className='show-favorites-button'> Show favorites </button>
+
+        {modalIsOpen === true ? (<FavoriteAdvicesModal closeModal={handleCloseModal} advices={favoriteAdvices} />) : null}
+
         <div className='advice-card-container'>
+          <button onClick={handleAddToFavorites} className='add-to-favorites-button'>
+            {currentAdviceIsAddedToFavorites === true ? (<FavoriteIcon sx={{ color: 'var(--lightGreen)' }} />) : (<FavoriteBorderIcon sx={{ color: 'var(--lightGreen)' }} />) }
+          </button>
+
           <p className='advice-id'> ADVICE #{advice.id} </p>
           <p className='advice-content'> “{advice.content}” </p>
 
