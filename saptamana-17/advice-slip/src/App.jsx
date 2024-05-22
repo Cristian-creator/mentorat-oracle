@@ -43,7 +43,14 @@ const App = () => {
       // 1. cream un nou obiect / array in care copiem continutul variabilei
       const newFavoriteAdvices = [ ...favoriteAdvices ];
       // 2. modificam noul obiect / array cum vrem noi
-      newFavoriteAdvices.push(advice);
+      const currentDate = new Date();
+      // to do: formateaza currentDate la ceva de genul '24 May 2024 21:23'
+      const formattedDate = '24 May 2024 21:23';
+      const newAdvice = {
+        ...advice,
+        addedAt: formattedDate
+      };
+      newFavoriteAdvices.push(newAdvice);
       // 3. adaugam noul obiect / array in state
       setFavoriteAdvices(newFavoriteAdvices);
     } else {

@@ -1,0 +1,34 @@
+1. Identifier 'ceva' has already been declared.
+Explicatie: exista deja o variabila cu numele 'ceva' in acelasi scope. Cu alte cuvinte, intre o pereche de acolade ( fie cele de dupa o functie, fie cele de dupa un if, fie cele de dupa un try etc ) NU AI VOIE sa ai 2 variabile cu acelasi nume
+Solutie: schimba numele uneia dintre variabile
+
+2. "ceva" is not defined
+Explicatie: variabila cu numele "ceva" nu exista
+Solutie: fie ai scris gresit numele variabilei, fie nu ai creat-o, fie variabila nu poate fi accesata din acel loc
+
+3. "ceva" is not a function
+Explicatie: folosesti o metoda pe tipul de data gresit
+Exemplu: in aplicatia advice slip o sa primesti eroarea asta pentru linia de mai jos
+
+  advice.includes('date')
+
+pentru ca advice este un obiect, iar includes se aplica doar pe string sau array
+
+Alt exemplu:
+  const x = 5;
+
+  console.log( x.toLowerCase() );
+
+4. Cannot read properties of undefined (reading 'ceva') / Cannot read properties of null (reading 'ceva')
+Explicatie: inseamna ca incerci sa accesezi proprietatea "ceva" SAU sa apelezi metoda "ceva" pe o variabila care este egala cu undefined sau null. Merge sa pui ".ceva" doar dupa o variabila care este un obiect
+
+Exemplu:
+# nu exista niciun element cu clasa clickme => clickMeButton va fi egal cu null
+const clickMeButton = document.querySelector('.clickme');
+
+clickMeButton.addEventListener('click', handleClick);
+
+5. Failed to resolve import
+Explicatie: incerci sa importi ceva dintr-un fisier care nu poate fi gasit, adica ai gresit calea catre el
+Solutie: corecteaza calea catre fisier
+

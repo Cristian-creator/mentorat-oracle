@@ -1,0 +1,4 @@
+State vs Non-State
+- [ ] La fiecare randare partea de javascript se re-executa, iar cea de JSX se re-randeaza ( automat și componentele copil )
+- [ ] Valorile variabilelor non-state nu se păstrează intre randari
+- [ ] Valorile variabilellor din state se pastrea intre randari ( State - a component’s memory, https://react.dev/learn/state-a-components-memory )
