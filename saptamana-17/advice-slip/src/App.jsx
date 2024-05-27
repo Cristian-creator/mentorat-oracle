@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import './App.css';
-import dice from './assets/dice.svg';
 import { initialAdvice } from './initialAdvice';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteAdvicesModal from './components/FavoriteAdvicesModal/FavoriteAdvicesModal';
+import AdviceCard from './components/AdviceCard/AdviceCard';
 
 const App = () => {
   const [advice, setAdvice] = useState(initialAdvice); // hook
   const [isLoading, setIsLoading] = useState(false);
-  const [favoriteAdvices, setFavoriteAdvices] = useState([]);
+
+  const favoriteAdvicesFromLocalStorage = JSON.parse(localStorage.getItem('favoriteAdvicesLS'));
+  const initialFavoriteAdvices = favoriteAdvicesFromLocalStorage === null ? [] : favoriteAdvicesFromLocalStorage;
+
+  const [favoriteAdvices, setFavoriteAdvices] = useState(initialFavoriteAdvices);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const currentAdviceIsAddedToFavorites = favoriteAdvices.findIndex((favoriteAdvice) => favoriteAdvice.id === advice.id) === -1 ? false : true;
@@ -43,21 +45,27 @@ const App = () => {
       // 1. cream un nou obiect / array in care copiem continutul variabilei
       const newFavoriteAdvices = [ ...favoriteAdvices ];
       // 2. modificam noul obiect / array cum vrem noi
-      const currentDate = new Date();
-      // to do: formateaza currentDate la ceva de genul '24 May 2024 21:23'
-      const formattedDate = '24 May 2024 21:23';
+      const d = new Date();
+      const day = d.getDate() < 10 ? '0' + d.getDate() : d.getDate();
+      const month = (d.getMonth() + 1) < 10 ? '0' + (d.getMonth() + 1) : d.getMonth() + 1;
+      const year = d.getFullYear();
+      const hour = d.getHours();
+      const minutes = d.getMinutes();
+      const currentDateFormatted = `${day}/${month}/${year} ${hour}:${minutes}`; // 27/05/2024
       const newAdvice = {
         ...advice,
-        addedAt: formattedDate
+        addedAt: currentDateFormatted
       };
       newFavoriteAdvices.push(newAdvice);
       // 3. adaugam noul obiect / array in state
       setFavoriteAdvices(newFavoriteAdvices);
+      localStorage.setItem('favoriteAdvicesLS', JSON.stringify(newFavoriteAdvices));
     } else {
       // eliminam advice-ul de la favorite
       const newFavoriteAdvices = [ ...favoriteAdvices ];
       newFavoriteAdvices.splice(indexOfCurrentAdvice, 1);
       setFavoriteAdvices(newFavoriteAdvices);
+      localStorage.setItem('favoriteAdvicesLS', JSON.stringify(newFavoriteAdvices));
     }
   }
 
@@ -77,28 +85,13 @@ const App = () => {
 
         {modalIsOpen === true ? (<FavoriteAdvicesModal closeModal={handleCloseModal} advices={favoriteAdvices} />) : null}
 
-        <div className='advice-card-container'>
-          <button onClick={handleAddToFavorites} className='add-to-favorites-button'>
-            {currentAdviceIsAddedToFavorites === true ? (<FavoriteIcon sx={{ color: 'var(--lightGreen)' }} />) : (<FavoriteBorderIcon sx={{ color: 'var(--lightGreen)' }} />) }
-          </button>
-
-          <p className='advice-id'> ADVICE #{advice.id} </p>
-          <p className='advice-content'> “{advice.content}” </p>
-
-          {/* --- separator --- */}
-          <div className='separator-container'>
-            <hr className='horizontal-line' />
-            <div className='vertical-lines-container'>
-              <div className='vertical-line' />
-              <div className='vertical-line' />
-            </div>
-            <hr className='horizontal-line' />
-          </div>
-
-          <button disabled={isLoading === true ? true : false} onClick={generateAdvice} className='generate-advice-button'>
-            {isLoading === true ? (<div className="spinner"></div>) : (<img src={dice} />)}
-          </button>
-        </div>
+        <AdviceCard 
+          handleAddToFavorites={handleAddToFavorites}
+          currentAdviceIsAddedToFavorites={currentAdviceIsAddedToFavorites}
+          advice={advice}
+          isLoading={isLoading}
+          generateAdvice={generateAdvice}
+        />
     </div>
   );
 }
